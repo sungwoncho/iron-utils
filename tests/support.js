@@ -12,3 +12,10 @@ Router.route('/orange', {
     this.stop();
   }
 });
+
+Router.route('/fruits/:name', {
+  name: 'fruit.show',
+  action: function () {
+    this.stop();
+  }
+});

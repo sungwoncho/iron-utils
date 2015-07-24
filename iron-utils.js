@@ -15,12 +15,23 @@ Object.defineProperty(CurrentRoute, 'name', {
 });
 
 /**
- * Returns an Array containing parameters passed to the current route
+ * Returns an Array containing parameters passed to the current route.
+ *
+ * The returned array also has parameter name as property and its value as value.
+ * i.e. On '/:date/:slug/' route, CurrentRoute.params.slug gives you the value of
+ * the slug parameter.
  * @returns {Array}
  */
 Object.defineProperty(CurrentRoute, 'params', {
   get: function () {
-    return Router.current().params;
+    var params = Router.current().params;
+
+    for (var key in params) {
+      if (key !== 'hash' && key !== 'query')
+        params.push(params[key]);
+    }
+
+    return params;
   }
 });
 
