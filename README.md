@@ -12,11 +12,11 @@ Install the package:
 
 ## Utilities
 
-You can use the following utilities anywhere in client side.
+You can use the following utilities anywhere on the client side.
 
 ### CurrentRoute
 
-The CurrentRoute object includes helper methods related to current routes.
+`CurrentRoute` object includes helper methods related to current routes.
 
 * `CurrentRoute.name`
 
@@ -35,8 +35,8 @@ CurrentRoute.name
 
 * `CurrentRoute.params`
 
-This returns an array of values of parameters passed to the current route.
-The array also contains properties with values equal to the parameter values.
+This returns an array of parameters passed to the current route.
+The array also has parameter names as properties and their values as corresponding values.
 
 This means that you can easily access parameters either by values or name.
 
@@ -59,8 +59,7 @@ CurrentRoute.params.color
 
 * `CurrentRoute.is(routeName)`
 
-This compares current route's name with the name passed as an argument and returns
-a boolean.
+This checks if the current route's name is equal to the name passed as the argument.
 
 ```javascript
 Router.route('apple', {
