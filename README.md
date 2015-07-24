@@ -35,23 +35,23 @@ CurrentRoute.name
 
 * `CurrentRoute.params`
 
-This returns an array of parameters passed to the current route.
-The array also has parameter names as properties and their values as corresponding values.
+This returns an array of parameters passed to the current route. The array also
+has key-value pairs of parameter names and values.
 
-This means that you can easily access parameters either by values or name.
+This means that you can easily retrieve parameters by their names.
 
 ```javascript
-Router.route('fruit/:name/:color', {
+Router.route('fruit/:type/:color', {
   name: 'fruit'
 });
 
-Router.go('fruit', {name: 'banana', color: 'blue'});
+Router.go('fruit', {type: 'banana', color: 'blue'});
 
 CurrentRoute.params
 // => ['banana', 'blue']
 
-CurrentRoute.params.name
-// => 'blue'
+CurrentRoute.params.type
+// => 'banana'
 
 CurrentRoute.params.color
 // => 'blue'
