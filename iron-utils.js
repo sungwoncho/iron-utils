@@ -9,8 +9,7 @@ CurrentRoute = {};
  * @returns {String}
  */
 CurrentRoute.getName = function () {
-  var currentPage = Router.current();
-  return currentPage.route.getName();
+  return Router.current().route.getName();
 };
 
 /**
@@ -19,8 +18,7 @@ CurrentRoute.getName = function () {
  * @returns {Boolean}
  */
 CurrentRoute.is = function (routeName) {
-  var currentPage = Router.current();
-  return currentPage.route.getName() === routeName;
+  return Router.current().route.getName() === routeName;
 };
 
 /**
@@ -28,5 +26,5 @@ CurrentRoute.is = function (routeName) {
  * @returns {Array}
  */
 CurrentRoute.params = function () {
-  return currentPage.params;
+  return Router.current().params;
 };
