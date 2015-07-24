@@ -84,22 +84,34 @@ with a clearer meaning.
 // -----------------------------------------------------------------
 // Before
 // -----------------------------------------------------------------
-var currentRoute = Router.current();
+Template.myTemplate.onCreated(function () {
+  var self = this
 
-if (currentRoute.route.getName() === 'category.show') {
-  self.subscribe('topics', currentRoute.params.slug, self.limit.get());
-} else {
-  self.subscribe('recent-topics', self.limit.get());
-}
+  self.autorun(function () {
+    var currentRoute = Router.current();
+
+    if (currentRoute.route.getName() === 'category.show') {
+      self.subscribe('topics', currentRoute.params.slug, self.limit.get());
+    } else {
+      self.subscribe('recent-topics', self.limit.get());
+    }
+  });
+});
 
 // -----------------------------------------------------------------
 // After
 // -----------------------------------------------------------------
-if (CurrentRoute.is('category.show')) {
-  self.subscribe('topics', CurrentRoute.params.slug, self.limit.get());
-} else {
-  self.subscribe('recent-topics', self.limit.get());
-}
+Template.myTemplate.onCreated(function () {
+  var self = this
+
+  self.autorun(function () {
+    if (CurrentRoute.is('category.show')) {
+      self.subscribe('topics', CurrentRoute.params.slug, self.limit.get());
+    } else {
+      self.subscribe('recent-topics', self.limit.get());
+    }
+  });
+});
 ```
 
 ## Contributing
