@@ -81,7 +81,9 @@ The following is an example use case where iron-utils can help you write less co
 with a clearer meaning.
 
 ```javascript
+// -----------------------------------------------------------------
 // Before
+// -----------------------------------------------------------------
 var currentRoute = Router.current();
 
 if (currentRoute.route.getName() === 'category.show') {
@@ -90,7 +92,9 @@ if (currentRoute.route.getName() === 'category.show') {
   self.subscribe('recent-topics', self.limit.get());
 }
 
+// -----------------------------------------------------------------
 // After
+// -----------------------------------------------------------------
 if (CurrentRoute.is('category.show')) {
   self.subscribe('topics', CurrentRoute.params.slug, self.limit.get());
 } else {
