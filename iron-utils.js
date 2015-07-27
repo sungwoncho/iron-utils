@@ -24,14 +24,18 @@ Object.defineProperty(CurrentRoute, 'name', {
  */
 Object.defineProperty(CurrentRoute, 'params', {
   get: function () {
+    var result = [];
     var params = Router.current().params;
 
     for (var key in params) {
-      if (key !== 'hash' && key !== 'query')
-        params.push(params[key]);
+      if (key !== 'hash' && key !== 'query') {
+        result.push(params[key]);
+        console.log(key + ' for ' + params[key]);
+        result[key] = params[key];
+      }
     }
 
-    return params;
+    return result;
   }
 });
 
