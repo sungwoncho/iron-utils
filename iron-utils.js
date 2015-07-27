@@ -40,7 +40,8 @@ Object.defineProperty(CurrentRoute, 'params', {
 });
 
 /**
- * Returns an Object of query parameters passed to the current route.
+ * Returns an Object of query parameters passed to the current route. Returns
+ * an empty object if there is no query parameter.
  *
  * e.g. On '/apple?sort=popularity&limit=10', CurrentRoute.query gives
  * you {sort: "popularity", limit: "10"}.
@@ -53,7 +54,8 @@ Object.defineProperty(CurrentRoute, 'query', {
 });
 
 /**
- * Returns the value of hash parameters passed to the current route.
+ * Returns the value of hash parameters passed to the current route. Returns
+ * null if there is no hash parameter.
  *
  * e.g. On '/apple#L1', CurrentRoute.hash gives you 'L1'
  * @returns {String}
