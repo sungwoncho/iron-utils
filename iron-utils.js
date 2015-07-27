@@ -40,6 +40,31 @@ Object.defineProperty(CurrentRoute, 'params', {
 });
 
 /**
+ * Returns an Object of query parameters passed to the current route.
+ *
+ * e.g. On '/apple?sort=popularity&limit=10', CurrentRoute.query gives
+ * you {sort: "popularity", limit: "10"}.
+ * @returns {Object}
+ */
+Object.defineProperty(CurrentRoute, 'query', {
+  get: function () {
+    return Router.current().params.query;
+  }
+});
+
+/**
+ * Returns the value of hash parameters passed to the current route.
+ *
+ * e.g. On '/apple#L1', CurrentRoute.hash gives you 'L1'
+ * @returns {String}
+ */
+Object.defineProperty(CurrentRoute, 'hash', {
+  get: function () {
+    return Router.current().params.hash;
+  }
+});
+
+/**
  * Tests if the name of the current route is equal to the route name supplied.
  * @param {String} routeName
  * @returns {Boolean}

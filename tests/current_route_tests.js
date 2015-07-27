@@ -30,3 +30,22 @@ Tinytest.addAsync('CurrentRoute.params returns an array of params', function (te
     next();
   }, 500);
 });
+
+Tinytest.addAsync('CurrentRoute.query returns an object of query params', function (test, next) {
+  Router.go('apple', {}, {query: 'q1=testQuery1&q2=testQuery2'});
+
+  Meteor.defer(function () {
+    test.equal(CurrentRoute.query.q1, 'testQuery1');
+    test.equal(CurrentRoute.query.q2, 'testQuery2');
+    next();
+  });
+});
+
+Tinytest.addAsync('CurrentRoute.hash returns the value of hash param', function (test, next) {
+  Router.go('apple', {}, {hash: 'testHash'});
+
+  Meteor.defer(function () {
+    test.equal(CurrentRoute.hash, 'testHash');
+    next();
+  }, 500);
+});
