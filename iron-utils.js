@@ -30,7 +30,6 @@ Object.defineProperty(CurrentRoute, 'params', {
     for (var key in params) {
       if (key !== 'hash' && key !== 'query') {
         result.push(params[key]);
-        console.log(key + ' for ' + params[key]);
         result[key] = params[key];
       }
     }
