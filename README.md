@@ -3,6 +3,7 @@
 
 Iron-utils provides convenient client side utilities for Iron Router.
 
+
 ## Get Started
 
 Install the package:
@@ -13,6 +14,7 @@ Install the package:
 ## Utilities
 
 You can use the following utilities anywhere on the client side.
+
 
 ### CurrentRoute
 
@@ -33,30 +35,6 @@ CurrentRoute.name
 // => 'apple'
 ```
 
-* `CurrentRoute.params`
-
-This returns an array of parameters passed to the current route. The array also
-has key-value pairs of parameter names and values.
-
-This means that you can easily retrieve parameters by their names.
-
-```javascript
-Router.route('fruit/:type/:color', {
-  name: 'fruit'
-});
-
-Router.go('fruit', {type: 'banana', color: 'blue'});
-
-CurrentRoute.params
-// => ['banana', 'blue']
-
-CurrentRoute.params.type
-// => 'banana'
-
-CurrentRoute.params.color
-// => 'blue'
-```
-
 * `CurrentRoute.is(routeName)`
 
 This checks if the current route's name is equal to the name passed as the argument.
@@ -70,10 +48,55 @@ Router.go('apple');
 
 CurrentRoute.is('apple');
 // => true
-
 CurrentRoute.is('banana');
 // => false
 ```
+
+* `CurrentRoute.params`
+
+This returns an array of parameters passed to the current route. The array also
+has key-value pairs of parameter names and values.
+
+This means that you can easily retrieve parameters by their names.
+
+```javascript
+Router.route('fruit/:type/:color', {
+  name: 'fruit'
+});
+
+
+Router.go('fruit', {type: 'banana', color: 'blue'});
+
+CurrentRoute.params
+// => ['banana', 'blue']
+CurrentRoute.params.type
+// => 'banana'
+CurrentRoute.params.color
+// => 'blue'
+```
+
+* `CurrentRoute.hash`
+
+Returns a value of the hash parameter passed to the current route.
+
+```javascript
+// On a route '/apple#L1'
+
+CurrentRoute.hash
+// => 'L1'
+```
+
+* `CurrentRoute.query`
+
+Returns an object of query parameters passed to the current route.
+
+```javascript
+// On a route '/apple?sort=popularity&limit=10'
+
+CurrentRoute.query
+// => {sort: "popularity", limit: "10"}
+```
+
 
 ## Use case
 
