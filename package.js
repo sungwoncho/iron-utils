@@ -1,6 +1,6 @@
 Package.describe({
   name: 'sungwoncho:iron-utils',
-  version: '0.1.0',
+  version: '0.1.1',
   summary: 'convenient client side utilities for Iron Router',
   git: 'https://github.com/sungwoncho/iron-utils',
   documentation: 'README.md'
