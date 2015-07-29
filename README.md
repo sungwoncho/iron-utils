@@ -139,6 +139,6 @@ Template.myTemplate.onCreated(function () {
 
 ## Contributing
 
-Open issue and pull requests.
+If you found a bug or have a feature request, open an issue.
 
 To run tests locally, run `meteor test-packages`.
