@@ -1,6 +1,8 @@
 # Iron-utils
 [![Build Status](https://travis-ci.org/sungwoncho/iron-utils.svg?branch=master)](https://travis-ci.org/sungwoncho/iron-utils)
 
+[![Meteor Icon](http://icon.meteor.com/package/sungwoncho:iron-utils)](https://atmospherejs.com/sungwoncho/iron-utils)
+
 Iron-utils provides convenient client side utilities for Iron Router.
 
 
